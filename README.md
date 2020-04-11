@@ -7,3 +7,7 @@
 ![](https://img.shields.io/badge/LANGUAGE-CSS3-green?style=for-the-badge&logo=css3)
 ![](https://img.shields.io/badge/LANGUAGE-JAVASCRIPT-yellow?style=for-the-badge&logo=javascript)
 
+
+### Documentation
+
+Read the project documentation at the following link: ![](https://github.com/teddyedo/WebApp-TicketAssistance/blob/master/docs/Documentation.pdf)
