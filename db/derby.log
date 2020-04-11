@@ -110,3 +110,5 @@ ERROR XJ004: Database 'BDT' non trovato.
 ============= end nested exception, level (1) ===========
 Cleanup action completed
 Sat Apr 11 16:33:56 CEST 2020 Thread[DRDAConnThread_3,5,main] (DATABASE = BDT), (DRDAID = {3}), Database 'BDT' non trovato.
+----------------------------------------------------------------
+Sat Apr 11 19:27:36 CEST 2020: arresto in corso del motore di Derby

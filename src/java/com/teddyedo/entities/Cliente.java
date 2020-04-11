@@ -61,5 +61,16 @@ public class Cliente implements Serializable {
     @Getter
     @Setter
     private Date DataNascita;
+    
+    @Basic
+    @Getter
+    @Setter
+    private String username;
+    
+    @Basic
+    @Getter
+    @Setter
+    private String password;
+    
 }
 
