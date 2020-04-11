@@ -1,29 +1,63 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
+<html lang="en">
 
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC project</title>
-    </head>
+<head>
+	<title>Homepage</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="style/images/icons/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="style/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style/fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="style/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="style/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="style/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="style/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="style/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="style/css/util.css">
+	<link rel="stylesheet" type="text/css" href="style/css/main.css">
+</head>
 
-    <body>
-        <p>Casella di Input Text con button che punta a <br> 
-            nome dell'applicazione/NOMESERVIZIO
-        </p>
-      
-        <form action="/WebApplication2_1S/FINDBYNAME.htm" accept="application/json"> 
-            <input type="text" name="nome"><br>
-            <input type="submit" value="FindByName">
-        </form>
-        <form action="/WebApplication2_1S/INSERTPERSONA.htm">
-            <input type="text" name="nome"><br>
-            <input type="submit" value="InsertPersona">
-        </form>
-        <form action="/WebApplication2_1S/REMOVEPERSONA.htm">
-          <input type="text" name="nome"><br>
-          <input type="submit" value="RemovePersona">  
-        </form>
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-85 p-b-20">
+				<form class="login100-form validate-form pl-5 pr-5 pb-5">
+					<span class="login100-form-avatar">
+						<img src="style/images/icons/user.png" alt="AVATAR">
+					</span>
+					<div class="container-login100-form-btn pb-5 pt-3">
+						<a class="login100-form-btn" id="clientButton" href="user/menuUser.html">
+							Cliente
+						</a>
+					</div>
+					<span class="login100-form-avatar">
+						<img src="style/images/icons/tech.png" alt="AVATAR">
+					</span>
 
-    </body>
+					<div class="container-login100-form-btn pt-3">
+						<a class="login100-form-btn2" id="techButton" href="technician/menuTech.html">
+							Tecnico
+						</a>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+	<script src="style/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="style/vendor/animsition/js/animsition.min.js"></script>
+	<script src="style/vendor/bootstrap/js/popper.js"></script>
+	<script src="style/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="style/vendor/select2/select2.min.js"></script>
+	<script src="style/vendor/daterangepicker/moment.min.js"></script>
+	<script src="style/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="style/vendor/countdowntime/countdowntime.js"></script>
+	<script src="style/js/main.js"></script>
+
+</body>
+
 </html>

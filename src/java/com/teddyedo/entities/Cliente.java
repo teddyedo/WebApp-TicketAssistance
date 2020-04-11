@@ -1,5 +1,6 @@
 package com.teddyedo.entities;
 
+import java.util.Date;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 
@@ -58,6 +59,6 @@ public class Cliente {
     @Temporal(TemporalType.DATE)
     @Getter
     @Setter
-    private String DataNascita;
+    private Date DataNascita;
 }
 

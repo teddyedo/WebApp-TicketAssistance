@@ -14,7 +14,7 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     <context:annotation-config />
     <!-- inserito da spring-servlet.xml -->
      <context:component-scan
-        base-package="it.marconivr.controller,it.marconivr.DAO" />
+        base-package="com.teddyedo.controller,com.teddyedo.DAO" />
       
      
     <!--

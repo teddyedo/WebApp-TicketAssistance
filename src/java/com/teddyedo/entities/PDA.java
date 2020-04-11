@@ -1,5 +1,6 @@
 package com.teddyedo.entities;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 import lombok.*;
@@ -16,7 +17,7 @@ import lombok.*;
 @AllArgsConstructor
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn
-public class PDA {
+public class PDA implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
