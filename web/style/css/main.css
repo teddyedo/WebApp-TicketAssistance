@@ -61,7 +61,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #000000;
+  color: #ffffff;
 }
 
 /*---------------------------------------------*/
@@ -489,3 +489,4 @@ iframe {
   transform: translateY(-50%);
   left: 0;
 }
+

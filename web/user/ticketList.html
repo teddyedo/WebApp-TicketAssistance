@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Menu</title>
+	<title>My ticket</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
 	
@@ -23,26 +24,53 @@
 			<div class="wrap-login100 p-t-45 p-b-20">
 				<form class="login100-form validate-form pl-5 pr-5 pb-5">
 					<span class="login100-form-title p-b-50">
-						Menu
+						Welcome, Edoardo!
 					</span>
 					<span class="login100-form-avatar">
 						<img src="images/icons/user.png" alt="AVATAR">
 					</span>
 
-					<div class="container-login100-form-btn p-t-40 p-b-40">
-						<a class="login100-form-btn" href="loginUser.html">
-							Sign in
+					<div class="container-login100-form-btn p-t-40 p-b-30">
+						<a class="login100-form-btn" href="#firstTicket">
+							See your tickets
 						</a>
 					</div>
-					<div class="container-login100-form-btn">
-						<a class="login100-form-btn" href="registerUser.html">
-							Sign up
-						</a>
-					</div>
+					<h5 style="text-align: center">or search by <br>ID</h5>
 
+					<div class="d-flex justify-content-center h-100 p-t-25">
+						<div class="searchbar">
+							<input class="search_input" type="text" name="" placeholder="Search...">
+							<a class="search_icon"><i class="fas fa-search"></i></a>
+						</div>
+					</div>
 				</form>
 			</div>
 		</div>
+		<a id="firstTicket"></a>
+			<div class="container-login100">
+				<div class="wrap-login100 p-t-45 p-b-20">
+					<form class="login100-form validate-form pl-5 pr-5 pb-5">
+						<p class="h3 p-b-40 ticket">Ticket ID: 25478</p>
+						<p class="h5 ticket">Ticket info:</p>
+						<hr>
+						<p class="h6 p-b-5">Date: 23/01/2001</p>
+						<p class="h6 p-b-5">Reason: Cracked Screen</p>
+						<p class="h6 p-b-5">Status: Repairing</p>
+						<p class="h6 p-b-30">Time left: 45 hours</p>
+						<p class="h5 ticket">Device info:</p>
+						<hr>
+						<p class="h6 p-b-5">ID: 14875</p>
+						<p class="h6 p-b-5">Brand: Samsung</p>
+						<p class="h6 p-b-30">Model: SN975</p>
+						<p class="h5 ticket">Technician info:</p>
+						<hr>
+						<p class="h6 p-b-5">ID: 12</p>
+						<p class="h6 p-b-5">Name: Edoardo</p>
+						<p class="h6 p-b-5">Surname: Allari</p>
+					</form>
+				</div>
+			</div>
+
 	</div>
 	
 

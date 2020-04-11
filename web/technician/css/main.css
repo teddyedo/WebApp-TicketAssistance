@@ -61,7 +61,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #000000;
+  color: #ffffff;
 }
 
 /*---------------------------------------------*/
@@ -452,4 +452,79 @@ iframe {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 0;
+}
+
+.ticket{
+  color: #04724D;
+}
+
+.searchbar{
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #04724D;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.search_input{
+  color: #ffffff;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color:transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input{
+  width: 100%;
+  padding: 0 10px;
+  caret-color:red;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon{
+  background: white;
+  color: #04724D;
+}
+
+.search_icon{
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color:white;
+  text-decoration:none;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+  border-color: #04724D;
+}
+.btn-circle.btn-lg {
+  width: 70px;
+  height: 70px;
+  padding: 23px 23px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+#telephone{
+  display: none;
+}
+
+#tv{
+  display: none;
 }

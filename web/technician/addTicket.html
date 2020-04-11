@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>New ticket</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-45 p-b-20">
+				<form class="login100-form validate-form pl-5 pr-5 pb-5">
+					<span class="login100-form-title p-b-30">
+						Create a new ticket
+					</span>
+					<span class="login100-form-avatar">
+						<img src="images/icons/user.png" alt="AVATAR">
+					</span>
+					<div class="row">
+						<div class="col">
+							<div class="wrap-input100 validate-input m-t-45 m-b-35" data-validate="Enter reason">
+								<input class="input100" type="text" name="reason">
+								<span class="focus-input100" data-placeholder="Reason"></span>
+							</div>
+						</div>
+						<div class="col">
+							<div class="wrap-input100 validate-input  m-t-45 m-b-35" data-validate="Enter time left">
+								<input class="input100" type="text" name="timeleft">
+								<span class="focus-input100" data-placeholder="Time left"></span>
+							</div>
+						</div>
+					</div>
+					<h3 class="m-b-35">
+						Device info
+					</h3>
+
+					<div class="p-b-30" data-toggle="buttons">
+							<label class="btn btn-default btn-circle btn-lg m-r-30">
+								<input type="radio" name="q1" value="1" id="tvButton"><i class="fas fa-tv"></i>
+							</label>
+							<label class="btn btn-default btn-circle btn-lg ">
+								<input type="radio" name="q1" value="2" id="telephoneButton"><i class="fas fa-mobile"></i>
+							</label>
+					</div>
+
+					<!--Telephone-->
+					<div class="row" id="telephone">
+						<div class="col">
+							<div class="wrap-input100 validate-input m-t-20 m-b-35" data-validate="Enter brand">
+								<input class="input100" type="text" name="brand">
+								<span class="focus-input100" data-placeholder="Brand"></span>
+							</div>
+							<div class="wrap-input100 validate-input m-b-50" data-validate="Enter color">
+								<input class="input100" type="text" name="color">
+								<span class="focus-input100" data-placeholder="Color"></span>
+							</div>
+						</div>
+						<div class="col">
+							<div class="wrap-input100 validate-input  m-t-20 m-b-35" data-validate="Enter model">
+								<input class="input100" type="text" name="model">
+								<span class="focus-input100" data-placeholder="Model"></span>
+							</div>
+							<div class="wrap-input100 validate-input m-b-50" data-validate="Enter OP">
+								<input class="input100" type="text" name="op">
+								<span class="focus-input100" data-placeholder="Operating System"></span>
+							</div>
+						</div>
+					</div>
+
+					<!--TV-->
+					<div class="row" id="tv">
+						<div class="col">
+							<div class="wrap-input100 validate-input m-t-20 m-b-35" data-validate="Enter brand">
+								<input class="input100" type="text" name="brand">
+								<span class="focus-input100" data-placeholder="Brand"></span>
+							</div>
+							<div class="wrap-input100 validate-input  m-t-20 m-b-35" data-validate="Enter HDMI port number">
+								<input class="input100" type="text" name="hdmi">
+								<span class="focus-input100" data-placeholder="HDMI port number"></span>
+							</div>
+						</div>
+						<div class="col">
+							<div class="wrap-input100 validate-input  m-t-20 m-b-35" data-validate="Enter model">
+								<input class="input100" type="text" name="model">
+								<span class="focus-input100" data-placeholder="Model"></span>
+							</div>
+							<div class="wrap-input100 validate-input m-b-50" data-validate="Enter inches">
+								<input class="input100" type="text" name="inches">
+								<span class="focus-input100" data-placeholder="Inches"></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Create ticket
+						</button>
+					</div>
+
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/script.js"></script>
+
+
+</body>
+
+</html>

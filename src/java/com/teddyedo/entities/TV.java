@@ -25,6 +25,11 @@ public class TV extends Apparecchio {
     @Basic
     @Getter
     @Setter
-    private String canaliDigitali;
+    private int numeroPorteHDMI;
+
+    @Basic
+    @Getter
+    @Setter
+    private int pollici;
    
 }

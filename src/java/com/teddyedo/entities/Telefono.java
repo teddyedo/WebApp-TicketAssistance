@@ -25,7 +25,7 @@ public class Telefono extends Apparecchio {
     @Basic
     @Getter
     @Setter
-    private String fotocamera;
+    private String colore;
     
     @Basic
     @Getter
