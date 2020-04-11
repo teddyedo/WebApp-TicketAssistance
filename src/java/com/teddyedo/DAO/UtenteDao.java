@@ -6,8 +6,10 @@
 package com.teddyedo.DAO;
 
 import com.teddyedo.entities.Utente;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -31,5 +33,19 @@ public class UtenteDao {
             }
             return false;
         }
+    }
+    
+    public List<Utente> findAll() {
+        TypedQuery<Utente> typedQuery = em.createQuery("SELECT u FROM Utente u", Utente.class);
+        List<Utente> utenteList = typedQuery.getResultList();
+        return utenteList;
+    }
+
+   
+    public Utente findById(Long id) {
+        TypedQuery<Utente> typedQuery = em.createQuery("SELECT u FROM Utente u WHERE u.id=:id", Utente.class);
+        typedQuery.setParameter("id", id);
+        Utente utente = typedQuery.getResultList().get(0);
+        return utente;
     }
 }

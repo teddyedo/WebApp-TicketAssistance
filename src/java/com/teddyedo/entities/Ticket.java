@@ -1,5 +1,6 @@
 package com.teddyedo.entities;
 
+import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ import lombok.Setter;
  @Entity
  @NoArgsConstructor
 @AllArgsConstructor
-public class Ticket {
+public class Ticket implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

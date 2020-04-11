@@ -1,5 +1,6 @@
 package com.teddyedo.entities;
 
+import java.io.Serializable;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 
@@ -17,13 +18,13 @@ import lombok.Setter;
  @Entity
  @NoArgsConstructor
 @AllArgsConstructor
-public class Utente {
+public class Utente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private long Id;
+    private long id;
 
     @Basic
     @Getter

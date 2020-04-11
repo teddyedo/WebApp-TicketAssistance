@@ -1,7 +1,7 @@
-Fri Apr 10 11:42:18 CEST 2020 : Server di rete Apache Derby: 10.11.1.2 - (1629631) avviato e pronto ad accettare connessioni sulla porta 1527
+Sat Apr 11 16:30:21 CEST 2020 : Server di rete Apache Derby: 10.11.1.2 - (1629631) avviato e pronto ad accettare connessioni sulla porta 1527
 ----------------------------------------------------------------
-Fri Apr 10 11:42:18 CEST 2020:
-Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-0171-6377-f486-ffffb909dd70
+Sat Apr 11 16:30:21 CEST 2020:
+Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-0171-69a5-f752-ffffb909dd70
 sulla directory di database C:\Users\edoal\Desktop\WebApp-TicketAssistance\db\TicketDatabase con caricatore classi sun.misc.Launcher$AppClassLoader@266474c2 
 Caricato da file:/C:/Program%20Files/Java/jdk1.8.0_152/db/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -12,24 +12,7 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=C:\Users\edoal\Desktop\WebApp-TicketAssistance\db
 Programma di caricamento classe database avviato - derby.database.classpath=''
-----------------------------------------------------------------
-Fri Apr 10 11:42:21 CEST 2020:
-Arresto dell'istanza a816c00e-0171-6377-f486-ffffb909dd70 nella directory del database C:\Users\edoal\Desktop\WebApp-TicketAssistance\db\TicketDatabase con il caricatore di classi sun.misc.Launcher$AppClassLoader@266474c2 
-Fri Apr 10 11:42:21 CEST 2020 Thread[DRDAConnThread_2,5,main] (DATABASE = TicketDatabase), (DRDAID = {2}), Chiusura del database 'TicketDatabase'.
-----------------------------------------------------------------
-Fri Apr 10 11:42:35 CEST 2020:
-Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a65c80ac-0171-6377-f486-ffffb909dd70
-sulla directory di database C:\Users\edoal\Desktop\WebApp-TicketAssistance\db\TicketDatabase con caricatore classi sun.misc.Launcher$AppClassLoader@266474c2 
-Caricato da file:/C:/Program%20Files/Java/jdk1.8.0_152/db/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_152-b16
-user.dir=C:\Program Files\Java\jdk1.8.0_152\db
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=C:\Users\edoal\Desktop\WebApp-TicketAssistance\db
-Programma di caricamento classe database avviato - derby.database.classpath=''
-Fri Apr 10 11:55:32 CEST 2020 Thread[DRDAConnThread_3,5,main] Cleanup action starting
+Sat Apr 11 16:33:56 CEST 2020 Thread[DRDAConnThread_3,5,main] Cleanup action starting
 java.sql.SQLException: Database 'BDT' non trovato.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
@@ -77,8 +60,8 @@ ERROR XJ004: Database 'BDT' non trovato.
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
-Fri Apr 10 11:55:32 CEST 2020 Thread[DRDAConnThread_3,5,main] (DATABASE = BDT), (DRDAID = {4}), Database 'BDT' non trovato.
-Fri Apr 10 11:55:32 CEST 2020 Thread[DRDAConnThread_3,5,main] Cleanup action starting
+Sat Apr 11 16:33:56 CEST 2020 Thread[DRDAConnThread_3,5,main] (DATABASE = BDT), (DRDAID = {2}), Database 'BDT' non trovato.
+Sat Apr 11 16:33:56 CEST 2020 Thread[DRDAConnThread_3,5,main] Cleanup action starting
 java.sql.SQLException: Database 'BDT' non trovato.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
@@ -126,9 +109,4 @@ ERROR XJ004: Database 'BDT' non trovato.
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
-Fri Apr 10 11:55:32 CEST 2020 Thread[DRDAConnThread_3,5,main] (DATABASE = BDT), (DRDAID = {5}), Database 'BDT' non trovato.
-----------------------------------------------------------------
-Fri Apr 10 17:32:31 CEST 2020: arresto in corso del motore di Derby
-----------------------------------------------------------------
-Fri Apr 10 17:32:31 CEST 2020:
-Arresto dell'istanza a65c80ac-0171-6377-f486-ffffb909dd70 nella directory del database C:\Users\edoal\Desktop\WebApp-TicketAssistance\db\TicketDatabase con il caricatore di classi sun.misc.Launcher$AppClassLoader@266474c2 
+Sat Apr 11 16:33:56 CEST 2020 Thread[DRDAConnThread_3,5,main] (DATABASE = BDT), (DRDAID = {3}), Database 'BDT' non trovato.

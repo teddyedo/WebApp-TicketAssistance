@@ -1,5 +1,6 @@
 package com.teddyedo.entities;
 
+import java.io.Serializable;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,13 +20,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn
-public class Apparecchio {
+public class Apparecchio implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private long Id;
+    private long id;
     
     @Basic
     @Getter
