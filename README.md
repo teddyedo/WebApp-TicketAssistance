@@ -1,4 +1,3 @@
 # WebApp-TicketAssistance
 
-[](https://img.shields.io/github/languages/top/badges/shields.svg)
-
+![](https://img.shields.io/badge/IDE-INTELLIJ%20IDEA-red)
