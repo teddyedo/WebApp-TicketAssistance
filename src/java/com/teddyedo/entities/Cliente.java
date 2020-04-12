@@ -72,5 +72,11 @@ public class Cliente implements Serializable {
     @Setter
     private String password;
     
+    @Basic
+    @Getter
+    @Setter
+    private String SALT;
+    
+    
 }
 

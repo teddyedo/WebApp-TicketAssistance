@@ -20,8 +20,15 @@ import com.google.common.base.Charsets;
 import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
 import com.teddyedo.DAO.ClienteDao;
+import com.teddyedo.DAO.TicketDao;
 import com.teddyedo.entities.Cliente;
+import com.teddyedo.entities.Ticket;
 import com.teddyedo.entities.Utente;
+import java.io.IOException;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -45,7 +52,7 @@ public class ClientController {
         return "/user/registerUser.html";
     }
     
-    @RequestMapping(value = "client/signin.htm", method = RequestMethod.POST,
+    @RequestMapping(value = "client/signup.htm", method = RequestMethod.POST,
             produces = "text/html;charset=UTF-8")
     public String registration(HttpServletRequest request) throws ParseException {
         
@@ -83,10 +90,50 @@ public class ClientController {
         c.setTelefono(telephone);
         c.setUsername(username);
         c.setPassword(sha256);
+        c.setSALT(salt);
+        
         
         ClienteDao.insert(c);
         
         return "redirect:/client.htm";
+        
+    }
+    
+    
+    @RequestMapping(value = "client/signin.htm", method = RequestMethod.POST,
+            produces = "text/html;charset=UTF-8")
+    public void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+        String username = request.getParameter("username");
+        String password = request.getParameter("pass");
+        
+        Cliente c = ClienteDao.findByUsername(username);
+        
+        Hasher hasher = Hashing.sha256().newHasher();
+
+        String passwordEncrypted = c.getPassword();
+        String salt = c.getSALT();
+
+        String newPassword = password + salt;
+
+        hasher.putString(newPassword, Charsets.UTF_8);
+        String sha256 = hasher.hash().toString();
+        
+        if (sha256.equals(passwordEncrypted)) {
+            HttpSession session = request.getSession();
+            session.setAttribute("username", username);
+            //manda a pagina login succeded
+
+            List<Ticket> listaTicket = TicketDao.findAll();
+
+            request.setCharacterEncoding("UTF-8");
+            request.setAttribute("listaTicket", listaTicket);
+            request.getRequestDispatcher("ticketList.html").forward(request, response);
+            
+            
+        } else {
+            //error
+        }
         
     }
     

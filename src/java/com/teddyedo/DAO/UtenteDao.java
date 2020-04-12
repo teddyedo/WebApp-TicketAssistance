@@ -35,16 +35,23 @@ public class UtenteDao {
         }
     }
     
-    public List<Utente> findAll() {
+    public static List<Utente> findAll() {
         TypedQuery<Utente> typedQuery = em.createQuery("SELECT u FROM Utente u", Utente.class);
         List<Utente> utenteList = typedQuery.getResultList();
         return utenteList;
     }
 
    
-    public Utente findById(Long id) {
+    public static Utente findById(Long id) {
         TypedQuery<Utente> typedQuery = em.createQuery("SELECT u FROM Utente u WHERE u.id=:id", Utente.class);
         typedQuery.setParameter("id", id);
+        Utente utente = typedQuery.getResultList().get(0);
+        return utente;
+    }
+    
+    public static Utente findByUsername(String username) {
+        TypedQuery<Utente> typedQuery = em.createQuery("SELECT u FROM Utente u WHERE u.Username=:username", Utente.class);
+        typedQuery.setParameter("username", username);
         Utente utente = typedQuery.getResultList().get(0);
         return utente;
     }

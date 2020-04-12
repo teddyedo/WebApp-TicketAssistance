@@ -10,16 +10,23 @@ import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
 import com.teddyedo.DAO.ClienteDao;
 import com.teddyedo.DAO.PDADao;
+import com.teddyedo.DAO.TicketDao;
 import com.teddyedo.DAO.UtenteDao;
 import com.teddyedo.entities.Cliente;
 import com.teddyedo.entities.PDA;
+import com.teddyedo.entities.Ticket;
 import com.teddyedo.entities.Utente;
+import java.io.IOException;
 import java.security.SecureRandom;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.xml.bind.DatatypeConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -93,6 +100,7 @@ public class TechController {
         c.setTelefono(telephone);
         c.setUsername(username);
         c.setPassword(sha256);
+        c.setSALT(salt);
         
         ClienteDao.insert(c);
         
@@ -127,6 +135,8 @@ public class TechController {
         pda.setLuogo("Verona");
         pda.setNomeNegozio("Euronics");
         
+        PDADao.insert(pda);
+        
         Utente u = new Utente();
         u.setCognome(surname);
         u.setNome(name);
@@ -142,5 +152,40 @@ public class TechController {
         
     }
     
+    @RequestMapping(value = "technician/signin.htm", method = RequestMethod.POST,
+            produces = "text/html;charset=UTF-8")
+    public void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+        String username = request.getParameter("username");
+        String password = request.getParameter("pass");
+        
+        Utente u = UtenteDao.findByUsername(username);
+        
+        Hasher hasher = Hashing.sha256().newHasher();
+
+        String passwordEncrypted = u.getPassword();
+        String salt = u.getSALT();
+
+        String newPassword = password + salt;
+
+        hasher.putString(newPassword, Charsets.UTF_8);
+        String sha256 = hasher.hash().toString();
+        
+        if (sha256.equals(passwordEncrypted)) {
+            HttpSession session = request.getSession();
+            session.setAttribute("username", username);
+            //manda a pagina login succeded
+
+            List<Ticket> listaTicket = TicketDao.findAll();
+
+            request.setCharacterEncoding("UTF-8");
+            request.setAttribute("listaTicket", listaTicket);
+            request.getRequestDispatcher("ticketList.html").forward(request, response);
+            
+            
+        } else {
+            //error
+        }
+    }
  
 }

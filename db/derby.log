@@ -12,3 +12,8 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=C:\Users\edoal\Desktop\WebApp-TicketAssistance\db
 Programma di caricamento classe database avviato - derby.database.classpath=''
+----------------------------------------------------------------
+Sun Apr 12 20:02:52 CEST 2020: arresto in corso del motore di Derby
+----------------------------------------------------------------
+Sun Apr 12 20:02:52 CEST 2020:
+Arresto dell'istanza a816c00e-0171-6f26-b8b4-ffffb909dd70 nella directory del database C:\Users\edoal\Desktop\WebApp-TicketAssistance\db\TicketDatabase con il caricatore di classi sun.misc.Launcher$AppClassLoader@266474c2 

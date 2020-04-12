@@ -35,16 +35,23 @@ public class ClienteDao {
         }
     }
     
-    public List<Cliente> findAll() {
+    public static List<Cliente> findAll() {
         TypedQuery<Cliente> typedQuery = em.createQuery("SELECT c FROM Cliente c", Cliente.class);
         List<Cliente> clienteList = typedQuery.getResultList();
         return clienteList;
     }
 
    
-    public Cliente findById(Long id) {
+    public static Cliente findById(Long id) {
         TypedQuery<Cliente> typedQuery = em.createQuery("SELECT c FROM Cliente c WHERE c.id=:id", Cliente.class);
         typedQuery.setParameter("id", id);
+        Cliente cliente = typedQuery.getResultList().get(0);
+        return cliente;
+    }
+    
+    public static Cliente findByUsername(String username) {
+        TypedQuery<Cliente> typedQuery = em.createQuery("SELECT c FROM Cliente c WHERE c.username=:username", Cliente.class);
+        typedQuery.setParameter("username", username);
         Cliente cliente = typedQuery.getResultList().get(0);
         return cliente;
     }

@@ -35,14 +35,14 @@ public class TicketDao {
         }
     }
     
-    public List<Ticket> findAll() {
+    public static List<Ticket> findAll() {
         TypedQuery<Ticket> typedQuery = em.createQuery("SELECT t FROM Ticket t", Ticket.class);
         List<Ticket> ticketList = typedQuery.getResultList();
         return ticketList;
     }
 
    
-    public Ticket findById(Long id) {
+    public static Ticket findById(Long id) {
         TypedQuery<Ticket> typedQuery = em.createQuery("SELECT t FROM Ticket t WHERE t.id=:id", Ticket.class);
         typedQuery.setParameter("id", id);
         Ticket ticket = typedQuery.getResultList().get(0);
