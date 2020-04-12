@@ -86,7 +86,7 @@ public class ClientController {
         
         ClienteDao.insert(c);
         
-        return "redirect:/login.htm";
+        return "redirect:/client.htm";
         
     }
     

@@ -9,7 +9,11 @@ import com.google.common.base.Charsets;
 import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
 import com.teddyedo.DAO.ClienteDao;
+import com.teddyedo.DAO.PDADao;
+import com.teddyedo.DAO.UtenteDao;
 import com.teddyedo.entities.Cliente;
+import com.teddyedo.entities.PDA;
+import com.teddyedo.entities.Utente;
 import java.security.SecureRandom;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -50,7 +54,8 @@ public class TechController {
         return "/technician/registerUser.html";
     }
     
-    @RequestMapping(value = "technician/createclient.htm", method = RequestMethod.POST,
+    
+    @RequestMapping(value = "/technician/createclient.htm", method = RequestMethod.POST,
             produces = "text/html;charset=UTF-8")
     public String registerClient(HttpServletRequest request) throws ParseException {
         
@@ -91,8 +96,51 @@ public class TechController {
         
         ClienteDao.insert(c);
         
-        return "redirect:/login.htm";
+        return "redirect:/technician.htm";
         
     }
+    
+    @RequestMapping(value = "/technician/newtechnician.htm", method = RequestMethod.POST,
+            produces = "text/html;charset=UTF-8")
+    public String registerTech(HttpServletRequest request) throws ParseException {
+        
+        String name = request.getParameter("name");
+        String surname = request.getParameter("surname");
+        String username = request.getParameter("username");
+        String password = request.getParameter("pass");
+        
+        Random random = new SecureRandom();
+                
+        byte[] SaltGeneration = new byte[16];
+        random.nextBytes(SaltGeneration);
+        
+        String salt = DatatypeConverter.printBase64Binary(SaltGeneration);
+                
+        String passwordEncrypted = password + salt;
+        
+        Hasher hasher = Hashing.sha256().newHasher();
+        hasher.putString(passwordEncrypted, Charsets.UTF_8);
+        String sha256 = hasher.hash().toString();
+        
+        
+        PDA pda = new PDA();
+        pda.setLuogo("Verona");
+        pda.setNomeNegozio("Euronics");
+        
+        Utente u = new Utente();
+        u.setCognome(surname);
+        u.setNome(name);
+        u.setPassword(sha256);
+        u.setPda(pda);
+        u.setSALT(salt);
+        u.setUsername(username);
+        
+        UtenteDao.insert(u);
+        
+        
+        return "redirect:/technician.htm";
+        
+    }
+    
  
 }
