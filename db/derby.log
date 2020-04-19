@@ -1,7 +1,7 @@
-Sun Apr 12 18:09:05 CEST 2020 : Server di rete Apache Derby: 10.11.1.2 - (1629631) avviato e pronto ad accettare connessioni sulla porta 1527
+Sun Apr 19 21:00:11 CEST 2020 : Server di rete Apache Derby: 10.11.1.2 - (1629631) avviato e pronto ad accettare connessioni sulla porta 1527
 ----------------------------------------------------------------
-Sun Apr 12 18:09:05 CEST 2020:
-Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-0171-6f26-b8b4-ffffb909dd70
+Sun Apr 19 21:00:11 CEST 2020:
+Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-0171-93cf-e08e-ffffb909dd70
 sulla directory di database C:\Users\edoal\Desktop\WebApp-TicketAssistance\db\TicketDatabase con caricatore classi sun.misc.Launcher$AppClassLoader@266474c2 
 Caricato da file:/C:/Program%20Files/Java/jdk1.8.0_152/db/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -13,7 +13,8 @@ os.version=10.0
 derby.system.home=C:\Users\edoal\Desktop\WebApp-TicketAssistance\db
 Programma di caricamento classe database avviato - derby.database.classpath=''
 ----------------------------------------------------------------
-Sun Apr 12 20:02:52 CEST 2020: arresto in corso del motore di Derby
+Sun Apr 19 21:08:34 CEST 2020: arresto in corso del motore di Derby
 ----------------------------------------------------------------
-Sun Apr 12 20:02:52 CEST 2020:
-Arresto dell'istanza a816c00e-0171-6f26-b8b4-ffffb909dd70 nella directory del database C:\Users\edoal\Desktop\WebApp-TicketAssistance\db\TicketDatabase con il caricatore di classi sun.misc.Launcher$AppClassLoader@266474c2 
+Sun Apr 19 21:08:35 CEST 2020:
+Arresto dell'istanza a816c00e-0171-93cf-e08e-ffffb909dd70 nella directory del database C:\Users\edoal\Desktop\WebApp-TicketAssistance\db\TicketDatabase con il caricatore di classi sun.misc.Launcher$AppClassLoader@266474c2 
+----------------------------------------------------------------

@@ -8,12 +8,15 @@ package com.teddyedo.controllers;
 import com.google.common.base.Charsets;
 import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
+import com.teddyedo.DAO.ApparecchioDao;
 import com.teddyedo.DAO.ClienteDao;
 import com.teddyedo.DAO.PDADao;
 import com.teddyedo.DAO.TicketDao;
 import com.teddyedo.DAO.UtenteDao;
 import com.teddyedo.entities.Cliente;
 import com.teddyedo.entities.PDA;
+import com.teddyedo.entities.TV;
+import com.teddyedo.entities.Telefono;
 import com.teddyedo.entities.Ticket;
 import com.teddyedo.entities.Utente;
 import java.io.IOException;
@@ -59,6 +62,13 @@ public class TechController {
     public String techNewUser(){
     
         return "/technician/registerUser.html";
+    }
+    
+    @RequestMapping(value = "/technician/newticket.htm", method = RequestMethod.GET, 
+            produces = "text/html;charset=UTF-8")
+    public String newTicketPage(){
+    
+        return "/technician/addTicket.html";
     }
     
     
@@ -176,10 +186,8 @@ public class TechController {
             session.setAttribute("username", username);
             //manda a pagina login succeded
 
-            List<Ticket> listaTicket = TicketDao.findAll();
 
             request.setCharacterEncoding("UTF-8");
-            request.setAttribute("listaTicket", listaTicket);
             request.getRequestDispatcher("ticketList.html").forward(request, response);
             
             
@@ -187,5 +195,76 @@ public class TechController {
             //error
         }
     }
+    
+    @RequestMapping(value = "technician/createticket.htm", method = RequestMethod.POST,
+            produces = "text/html;charset=UTF-8")
+    public String newTicket(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+        String reason = request.getParameter("reason");
+        String timeLeft = request.getParameter("timeleft");
+        String brand  = request.getParameter("brand");
+        String model = request.getParameter("model");
+        Date dataRichiesta = new Date();
+        
+        
+        //Find the technician that make the ticket
+        String usernameTech = (String) request.getSession(false).getAttribute("username");
+        Utente u = UtenteDao.findByUsername(usernameTech);
+        
+        String customerUsername = request.getParameter("customers");
+        Cliente c = ClienteDao.findByUsername(customerUsername);
+                
+        if ("1".equals(request.getParameter("q1"))){
+            
+            String hdmi = request.getParameter("hdmi");
+            String inches = request.getParameter("inches");
+            
+            TV tv = new TV();
+            tv.setMarca(brand);
+            tv.setModello(model);
+            tv.setNumeroPorteHDMI(Integer.parseInt(hdmi));
+            tv.setPollici(Integer.parseInt(inches));
+            ApparecchioDao.insert(tv);
+            
+            Ticket ticket = new Ticket();
+            ticket.setApparecchio(tv);
+            ticket.setCliente(c);
+            ticket.setDataRichiesta(dataRichiesta);
+            ticket.setMotivoRichiesta(reason);
+            ticket.setStato("In riparazione");
+            ticket.setTempoRimanente(Integer.parseInt(timeLeft));
+            ticket.setUtente(u);
+            TicketDao.insert(ticket);
+                        
+        }else if("2".equals(request.getParameter("q1"))){
+            
+            String color = request.getParameter("color");
+            String os = request.getParameter("os");
+            
+            Telefono t = new Telefono();
+            t.setMarca(brand);
+            t.setSistemaOp(os);
+            t.setModello(model);
+            t.setColore(color);
+            ApparecchioDao.insert(t);
+            
+            Ticket ticket = new Ticket();
+            ticket.setApparecchio(t);
+            ticket.setCliente(c);
+            ticket.setDataRichiesta(dataRichiesta);
+            ticket.setMotivoRichiesta(reason);
+            ticket.setStato("In riparazione");
+            ticket.setTempoRimanente(Integer.parseInt(timeLeft));
+            ticket.setUtente(u);
+            TicketDao.insert(ticket);
+      
+        }
+        
+        return "ticketList.html";
+    }
+    
+    
+    
+    
  
 }

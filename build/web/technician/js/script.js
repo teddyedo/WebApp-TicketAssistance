@@ -17,7 +17,7 @@ var APP = {
     init_showTV : function () {
         $("#tvButton").change(APP.showTV);
     }
-}
+};
 
 $(document).ready(function () {
     APP.init_showTelephone();

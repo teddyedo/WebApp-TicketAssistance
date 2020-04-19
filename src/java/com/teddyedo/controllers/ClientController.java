@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.google.common.base.Charsets;
 import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
+import com.google.gson.Gson;
 import com.teddyedo.DAO.ClienteDao;
 import com.teddyedo.DAO.TicketDao;
 import com.teddyedo.entities.Cliente;
@@ -29,6 +30,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -135,6 +137,17 @@ public class ClientController {
             //error
         }
         
+    }
+    
+    @RequestMapping(value = "/client/getcustomers.htm", method = RequestMethod.GET, 
+            produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String getCustomersList(){
+    
+        List<Cliente> customersList = ClienteDao.findAll();
+        Gson gson = new Gson();
+        
+        return gson.toJson(customersList);
     }
     
 }

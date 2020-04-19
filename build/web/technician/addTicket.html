@@ -5,17 +5,17 @@
         <title>New ticket</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="technician/images/icons/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="technician/technician/vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="technician/technician/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="technician/fonts/iconic/css/material-design-iconic-font.min.css">
-        <link rel="stylesheet" type="text/css" href="technician/vendor/animate/animate.css">
-        <link rel="stylesheet" type="text/css" href="technician/vendor/css-hamburgers/hamburgers.min.css">
-        <link rel="stylesheet" type="text/css" href="technician/vendor/animsition/css/animsition.min.css">
-        <link rel="stylesheet" type="text/css" href="technician/vendor/select2/select2.min.css">
-        <link rel="stylesheet" type="text/css" href="technician/vendor/daterangepicker/daterangepicker.css">
-        <link rel="stylesheet" type="text/css" href="technician/css/util.css">
-        <link rel="stylesheet" type="text/css" href="technician/css/main.css">
+        <link rel="icon" type="image/png" href="../technician/images/icons/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="../technician/technician/vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../technician/technician/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../technician/fonts/iconic/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" type="text/css" href="../technician/vendor/animate/animate.css">
+        <link rel="stylesheet" type="text/css" href="../technician/vendor/css-hamburgers/hamburgers.min.css">
+        <link rel="stylesheet" type="text/css" href="../technician/vendor/animsition/css/animsition.min.css">
+        <link rel="stylesheet" type="text/css" href="../technician/vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="../technician/vendor/daterangepicker/daterangepicker.css">
+        <link rel="stylesheet" type="text/css" href="../technician/css/util.css">
+        <link rel="stylesheet" type="text/css" href="../technician/css/main.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
@@ -24,22 +24,22 @@
         <div class="limiter">
             <div class="container-login100">
                 <div class="wrap-login100 p-t-45 p-b-20">
-                    <form class="login100-form validate-form pl-5 pr-5 pb-5">
+                    <form class="login100-form validate-form pl-5 pr-5 pb-5" action="/WebApp-TicketAssistance/technician/createticket.htm" method="POST" >
                         <span class="login100-form-title p-b-30">
                             Create a new ticket
                         </span>
                         <span class="login100-form-avatar">
-                            <img src="technician/images/icons/user.png" alt="AVATAR">
+                            <img src="../technician/images/icons/user.png" alt="AVATAR">
                         </span>
                         <div class="row">
                             <div class="col">
-                                <div class="wrap-input100 validate-input m-t-45 m-b-35" data-validate="Enter reason">
+                                <div class="wrap-input100  m-t-45 m-b-35" >
                                     <input class="input100" type="text" name="reason">
                                     <span class="focus-input100" data-placeholder="Reason"></span>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="wrap-input100 validate-input  m-t-45 m-b-35" data-validate="Enter time left">
+                                <div class="wrap-input100  m-t-45 m-b-35">
                                     <input class="input100" type="text" name="timeleft">
                                     <span class="focus-input100" data-placeholder="Time left"></span>
                                 </div>
@@ -56,27 +56,31 @@
                             <label class="btn btn-default btn-circle btn-lg ">
                                 <input type="radio" name="q1" value="2" id="telephoneButton"><i class="fas fa-mobile"></i>
                             </label>
-                        </div>
 
+                        </div>
+                        <input list="customer" name="customers">
+                        <datalist id="customer">
+
+                        </datalist> 
                         <!--Telephone-->
                         <div class="row" id="telephone">
                             <div class="col">
-                                <div class="wrap-input100 validate-input m-t-20 m-b-35" data-validate="Enter brand">
+                                <div class="wrap-input100  m-t-20 m-b-35" >
                                     <input class="input100" type="text" name="brand">
                                     <span class="focus-input100" data-placeholder="Brand"></span>
                                 </div>
-                                <div class="wrap-input100 validate-input m-b-50" data-validate="Enter color">
+                                <div class="wrap-input100  m-b-50" >
                                     <input class="input100" type="text" name="color">
                                     <span class="focus-input100" data-placeholder="Color"></span>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="wrap-input100 validate-input  m-t-20 m-b-35" data-validate="Enter model">
+                                <div class="wrap-input100  m-t-20 m-b-35" >
                                     <input class="input100" type="text" name="model">
                                     <span class="focus-input100" data-placeholder="Model"></span>
                                 </div>
-                                <div class="wrap-input100 validate-input m-b-50" data-validate="Enter OP">
-                                    <input class="input100" type="text" name="op">
+                                <div class="wrap-input100 m-b-50">                                    
+                                     <input class="input100" type="text" name="op">
                                     <span class="focus-input100" data-placeholder="Operating System"></span>
                                 </div>
                             </div>
@@ -85,50 +89,51 @@
                         <!--TV-->
                         <div class="row" id="tv">
                             <div class="col">
-                                <div class="wrap-input100 validate-input m-t-20 m-b-35" data-validate="Enter brand">
+                                <div class="wrap-input100  m-t-20 m-b-35" >
                                     <input class="input100" type="text" name="brand">
                                     <span class="focus-input100" data-placeholder="Brand"></span>
                                 </div>
-                                <div class="wrap-input100 validate-input  m-t-20 m-b-35" data-validate="Enter HDMI port number">
+                                <div class="wrap-input100   m-t-20 m-b-35" >
                                     <input class="input100" type="text" name="hdmi">
                                     <span class="focus-input100" data-placeholder="HDMI port number"></span>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="wrap-input100 validate-input  m-t-20 m-b-35" data-validate="Enter model">
+                                <div class="wrap-input100   m-t-20 m-b-35" >
                                     <input class="input100" type="text" name="model">
                                     <span class="focus-input100" data-placeholder="Model"></span>
                                 </div>
-                                <div class="wrap-input100 validate-input m-b-50" data-validate="Enter inches">
+                                <div class="wrap-input100  m-b-50" >
                                     <input class="input100" type="text" name="inches">
                                     <span class="focus-input100" data-placeholder="Inches"></span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="container-login100-form-btn">
-                            <button class="login100-form-btn">
-                                Create ticket
-                            </button>
-                        </div>
+
+                        <input type="submit"  class="login100-form-btn" value="Create ticket">
+
+                        <button>Prova</button>
                     </form>
                 </div>
             </div>
         </div>
 
 
-        <div id="dropDownSelect1"></div>
 
-        <script src="technician/vendor/jquery/jquery-3.2.1.min.js"></script>
-        <script src="technician/vendor/animsition/js/animsition.min.js"></script>
-        <script src="technician/vendor/bootstrap/js/popper.js"></script>
-        <script src="technician/vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="technician/vendor/select2/select2.min.js"></script>
-        <script src="technician/vendor/daterangepicker/moment.min.js"></script>
-        <script src="technician/vendor/daterangepicker/daterangepicker.js"></script>
-        <script src="technician/vendor/countdowntime/countdowntime.js"></script>
-        <script src="technician/js/main.js"></script>
-        <script src="technician/js/script.js"></script>
+
+
+        <script src="../technician/vendor/jquery/jquery-3.2.1.min.js"></script>
+        <script src="../technician/vendor/animsition/js/animsition.min.js"></script>
+        <script src="../technician/vendor/bootstrap/js/popper.js"></script>
+        <script src="../technician/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../technician/vendor/select2/select2.min.js"></script>
+        <script src="../technician/vendor/daterangepicker/moment.min.js"></script>
+        <script src="../technician/vendor/daterangepicker/daterangepicker.js"></script>
+        <script src="../technician/vendor/countdowntime/countdowntime.js"></script>
+        <script src="../technician/js/main.js"></script>
+        <script src="../technician/js/ticket.js"></script>
+
 
 
     </body>
