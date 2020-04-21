@@ -10,4 +10,4 @@
 
 ### Documentation
 
-Read the project documentation at the following link: ![](https://github.com/teddyedo/WebApp-TicketAssistance/blob/master/docs/Documentation.pdf)
+Read the project documentation at the following link: ![Documentation](https://github.com/teddyedo/WebApp-TicketAssistance/blob/master/docs/Documentation.pdf)
